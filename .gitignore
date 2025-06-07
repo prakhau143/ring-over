@@ -1,0 +1,13 @@
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+*.log
+
+# Ignore deployment configs
+windsurf_deployment.yaml
+netlify.toml
+
+# Ignore node_modules (if added in the future)
+node_modules/

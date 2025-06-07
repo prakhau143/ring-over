@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ring Over App</title>
+    <!-- Figma Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://static.figma.com/blog/fonts/Apercu.css"> -->
+    <!-- Whyte, Figma Sans, Apercu Mono, D7CBI, D7CBIB, Figma Mono are custom, fallback to Inter/Roboto if not available -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-wrapper">
+      <header class="app-header">
+        <div class="header-logo">Ring Over</div>
+        <nav class="header-nav">
+          <a href="#dashboard" id="dashboard-link">Dashboard</a>
+          <a href="#products" id="products-link">Products</a>
+        </nav>
+      </header>
+      <div class="app-body">
+        <!-- If sidebar is present in Figma, add here -->
+        <aside class="app-sidebar" style="display:none;"></aside>
+        <main id="main-content" class="dashboard-main">
+  <section class="dashboard-stats">
+    <div class="dashboard-stats-grid">
+      <div class="dashboard-stat-card">
+        <div class="stat-label">Total Calls</div>
+        <div class="stat-value">1,245</div>
+        <div class="stat-sub stat-up"><span class="stat-arrow stat-up">▲</span> 12% this week</div>
+      </div>
+      <div class="dashboard-stat-card">
+        <div class="stat-label">Active Users</div>
+        <div class="stat-value">312</div>
+        <div class="stat-sub stat-up"><span class="stat-arrow stat-up">▲</span> 5% this week</div>
+      </div>
+      <div class="dashboard-stat-card">
+        <div class="stat-label">Success Rate</div>
+        <div class="stat-value">98.2%</div>
+        <div class="stat-sub stat-stable">Stable</div>
+      </div>
+      <div class="dashboard-stat-card">
+        <div class="stat-label">Avg. Duration</div>
+        <div class="stat-value">03:12</div>
+        <div class="stat-sub stat-down"><span class="stat-arrow stat-down">▼</span> 3% this week</div>
+      </div>
+    </div>
+  </section>
+  <section class="dashboard-graph-section">
+    <div class="dashboard-graph-header">
+      <h2 class="dashboard-graph-title">Call Activity</h2>
+      <div class="dashboard-graph-controls">
+        <button class="graph-toggle active" data-range="weekly">Weekly</button>
+        <button class="graph-toggle" data-range="daily">Daily</button>
+      </div>
+    </div>
+    <div class="dashboard-graph-container">
+      <!-- Graph will be rendered here by JS -->
+      <canvas id="dashboard-graph" width="800" height="320"></canvas>
+      <div class="dashboard-graph-placeholder">Loading graph...</div>
+    </div>
+  </section>
+  <noscript>
+    <div style="color:red; font-weight:bold; padding: 2em; text-align:center;">This app requires JavaScript to function. Please enable JavaScript in your browser.</div>
+  </noscript>
+  <div id="js-fallback-message" style="display:none; color:red; font-weight:bold; padding: 2em; text-align:center;">If you see this message, JavaScript failed to load or crashed. Please check the browser console for errors.</div>
+</main>
+      </div>
+    </div>
+    <script>
+      console.log('Inline script in index.html is running!');
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
