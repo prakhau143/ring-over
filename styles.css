@@ -11,7 +11,6 @@
     --contrast-bg: #0a1833;
     --contrast-card: #162447;
     --contrast-text: #ffffff;
-}
 
     --navy-primary: #0A2540;
     --navy-accent: #0077FF;
@@ -1318,11 +1317,6 @@ main {
     margin: 28px 0 18px 0;
 }
 
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
 .search-container {
     display: flex;
     align-items: center;
@@ -1742,5 +1736,144 @@ main {
 .products-modal-content .close-modal-btn:hover {
     color: #6B7280; /* Figma: Hover close icon color */
 }
+
+/* =================================== */
+/* Responsive Design Adjustments       */
+/* =================================== */
+
+/* Tablet and larger mobile devices (e.g., iPads, landscape mobiles) */
+@media (max-width: 992px) {
+    .dashboard-wrapper {
+        padding: 24px;
+        margin: 24px auto;
+    }
+
+    .dashboard-stats-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        gap: 20px;
+    }
+
+    .dashboard-graphs-row {
+        flex-direction: column; /* Stack graph cards vertically */
+        gap: 24px;
+    }
+
+    .app-header {
+        padding: 0 20px; /* Reduce header padding */
+    }
+
+    .header-nav {
+        gap: 20px; /* Reduce gap between nav items */
+    }
+    
+    .products-page-figma .products-actions {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .products-table-card { /* Assuming this is the main card for the products table */
+        padding: 16px;
+    }
+    
+    /* Adjust product table for smaller screens if it exists and has a specific class */
+    /* Example: Make table horizontally scrollable or adjust column visibility */
+    .products-table-responsive-container { /* You might need to wrap your table in this */
+        overflow-x: auto;
+    }
+}
+
+/* Smaller mobile devices (portrait view) */
+@media (max-width: 600px) {
+    .app-header {
+        flex-direction: column; /* Stack logo and nav */
+        height: auto;
+        padding: 15px;
+    }
+
+    .header-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    
+    .header-nav a {
+        padding: 8px 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .dashboard-title {
+        font-size: 1.8rem; /* Reduce title size */
+    }
+    
+    .dashboard-header-row {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch; /* Make items full width */
+    }
+    
+    .dashboard-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .dashboard-date-filter, .dashboard-report-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dashboard-stats-grid {
+        grid-template-columns: 1fr; /* 1 card per row */
+        gap: 16px;
+    }
+
+    .stat-card {
+        padding: 20px 15px;
+    }
+    
+    .stat-card-value {
+        font-size: 1.8rem;
+    }
+
+    .dashboard-graph-card {
+        padding: 20px 15px;
+    }
+    
+    .dashboard-graph-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .graph-filter-select {
+        width: 100%;
+    }
+
+    /* Products Page Adjustments */
+    .products-title {
+        font-size: 1.6rem;
+    }
+
+    .products-page-figma .products-actions .products-search-container,
+    .products-page-figma .products-actions .products-fg-add-btn {
+        width: 100%;
+    }
+    
+    .products-page-figma .products-search-input {
+        width: 100%;
+    }
+
+    .products-modal-content { /* For Add/Edit Product Modals */
+        padding: 1.5rem;
+        margin: 10px; /* Ensure it doesn't touch screen edges */
+        width: calc(100% - 20px);
+    }
+    
+    /* Further fine-tuning for product table if needed */
+    /* e.g., hide less critical columns or reduce font sizes */
+    /* .products-table th, .products-table td { font-size: 0.8rem; padding: 6px; } */
+}
+
 
 
